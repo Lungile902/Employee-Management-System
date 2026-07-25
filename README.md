@@ -22,7 +22,7 @@ ERD
 
 functions,triger functions, views
 
-###Database queries with scripts
+### Database queries with scripts
 CREATE SCRIPT ATTENDENCE TABLE
 -- Table: public.attendance
 
