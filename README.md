@@ -88,15 +88,15 @@ training:
 
 ## DESIGN DECISIONS
 The design decisions were primarily made to ensure the database provides functionality, adaptability, and maintainability.
-Functionality
+### Functionality
 Functionality focuses on ensuring that the database operates effectively and satisfies the defined business rules. Firstly, it was important to identify all the entities required by the database. The identified entities were based on the different aspects of the business requirements and were used to determine the relationships between them.
 The database was also designed to preserve historical information. Salary, training, and promotion information are stored separately from the employee information, allowing historical records to be retained rather than overwritten when changes occur. Similarly, performance reviews are separated from employee information because an employee may receive multiple performance reviews over time.
 The design also supports in-depth data analysis through the use of database views. These views contain predefined business queries that can be used to retrieve meaningful information for reporting and analysis. In addition, trigger functions were incorporated to perform automatic calculations for numerical values, reducing the need for these calculations to be performed manually.
-Adaptability
+### Adaptability
 Adaptability prioritises the flexibility of the database when integrating with third-party software and when changes occur to the hardware or software environment. PostgreSQL was selected as the database management system because it provides compatibility with external tools and applications.
 For example, the database can be connected to Power BI for further data analysis and reporting. The views created in the database can be imported into Power BI and used as data sources for reports, dashboards, and visualisations. This allows the database to remain focused on storing and processing data while Power BI can be used for more advanced reporting and data visualisation.
 Furthermore, PostgreSQL is not dependent on a specific hardware configuration, which provides flexibility when the underlying hardware or software environment changes.
-Maintainability
+### Maintainability
 Maintainability focuses on making it easier to perform insert, update, and delete operations and to manage changes to the database over time. The database was structured into separate entities with clearly defined relationships, which makes individual components easier to manage and modify without unnecessarily affecting unrelated data.
 The EmployeeTraining entity was introduced to resolve the many-to-many relationship between employees and training. An employee can participate in multiple training programmes, while a training programme can be attended by multiple employees. Rather than creating a direct many-to-many relationship, the EmployeeTraining entity acts as an associative entity between the two tables. This improves the structure of the database and provides a suitable location for storing information specific to an employee's participation in a particular training programme.
 Overall, these design decisions were intended to create a database that is functional in meeting the business requirements, adaptable to external reporting and software environments, and maintainable as the system and its data requirements evolve.
